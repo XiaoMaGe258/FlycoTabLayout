@@ -1,6 +1,6 @@
 # FlycoTabLayout
 [![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-FlycoTabLayout-green.svg?style=true)](https://android-arsenal.com/details/1/2756)
-#### [中文版](https://github.com/H07000223/FlycoTabLayout/blob/master/README_CN.md)
+#### [中文版](https://github.com/XiaoMaGe258/FlycoTabLayout/blob/master/README_CN.md)
 An Android TabLayout Lib has 3 kinds of TabLayout at present.
 
 * SlidingTabLayout: deeply modified from [PagerSlidingTabStrip](https://github.com/jpardogo/PagerSlidingTabStrip).
@@ -32,8 +32,10 @@ can be used freely with other widgets together.
 * SegmentTabLayout
 
 ## Demo
+
 新增了一种样式； 可以设置选择的tab背景图片；间距等；
-![](https://github.com/XiaoMaGe258/FlycoTabLayout/blob/master/Screenshot_new_style.png)
+
+![](https://github.com/XiaoMaGe258/FlycoTabLayout/blob/master/new_style.png)
 
 ![](https://github.com/XiaoMaGe258/FlycoTabLayout/blob/master/preview_1.gif)
 
