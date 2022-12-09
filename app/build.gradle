@@ -24,6 +24,6 @@ dependencies {
     implementation support.appcompat
     implementation support.v4
     implementation support.design
-//    implementation project(':FlycoTabLayout_Lib')
-    implementation 'io.github.h07000223:flycoTabLayout:3.0.0'
+    implementation project(':FlycoTabLayout_Lib')
+//    implementation 'io.github.h07000223:flycoTabLayout:3.0.0'
 }

@@ -7,10 +7,12 @@ import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Path;
 import android.graphics.Rect;
+import android.graphics.drawable.Drawable;
 import android.graphics.drawable.GradientDrawable;
 import android.os.Bundle;
 import android.os.Parcelable;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.util.SparseArray;
 import android.util.TypedValue;
 import android.view.Gravity;
@@ -73,6 +75,9 @@ public class SlidingTabLayout extends HorizontalScrollView implements ViewPager.
     private float mIndicatorMarginBottom;
     private int mIndicatorGravity;
     private boolean mIndicatorWidthEqualTitle;
+    private Drawable mIndicatorSelectDrawable;
+    private Drawable mIndicatorUnSelectDrawable;
+    private float mTabMargin;
 
     /** underline */
     private int mUnderlineColor;
@@ -147,6 +152,9 @@ public class SlidingTabLayout extends HorizontalScrollView implements ViewPager.
         mIndicatorMarginBottom = ta.getDimension(R.styleable.SlidingTabLayout_tl_indicator_margin_bottom, dp2px(mIndicatorStyle == STYLE_BLOCK ? 7 : 0));
         mIndicatorGravity = ta.getInt(R.styleable.SlidingTabLayout_tl_indicator_gravity, Gravity.BOTTOM);
         mIndicatorWidthEqualTitle = ta.getBoolean(R.styleable.SlidingTabLayout_tl_indicator_width_equal_title, false);
+        mIndicatorSelectDrawable = ta.getDrawable(R.styleable.SlidingTabLayout_tl_indicator_select_drawable);
+        mIndicatorUnSelectDrawable = ta.getDrawable(R.styleable.SlidingTabLayout_tl_indicator_un_select_drawable);
+        mTabMargin = ta.getDimension(R.styleable.SlidingTabLayout_tl_tab_margin, dp2px(0));
 
         mUnderlineColor = ta.getColor(R.styleable.SlidingTabLayout_tl_underline_color, Color.parseColor("#ffffff"));
         mUnderlineHeight = ta.getDimension(R.styleable.SlidingTabLayout_tl_underline_height, dp2px(0));
@@ -289,6 +297,10 @@ public class SlidingTabLayout extends HorizontalScrollView implements ViewPager.
             lp_tab = new LinearLayout.LayoutParams((int) mTabWidth, LayoutParams.MATCH_PARENT);
         }
 
+        //TODO 加tab间距
+        if(mTabMargin > 0 && mTabsContainer.getChildCount() > 0){
+            lp_tab.leftMargin = Math.round(mTabMargin);
+        }
         mTabsContainer.addView(tabView, position, lp_tab);
     }
 
@@ -298,6 +310,10 @@ public class SlidingTabLayout extends HorizontalScrollView implements ViewPager.
 //            v.setPadding((int) mTabPadding, v.getPaddingTop(), (int) mTabPadding, v.getPaddingBottom());
             TextView tv_tab_title = (TextView) v.findViewById(R.id.tv_tab_title);
             if (tv_tab_title != null) {
+                //TODO 加标签背景图
+                if(mIndicatorSelectDrawable != null && mIndicatorUnSelectDrawable != null){
+                    v.setBackground(i == mCurrentTab ? mIndicatorSelectDrawable : mIndicatorUnSelectDrawable);
+                }
                 tv_tab_title.setTextColor(i == mCurrentTab ? mTextSelectColor : mTextUnselectColor);
                 tv_tab_title.setTextSize(TypedValue.COMPLEX_UNIT_PX, mTextsize);
                 tv_tab_title.setPadding((int) mTabPadding, 0, (int) mTabPadding, 0);
@@ -367,9 +383,12 @@ public class SlidingTabLayout extends HorizontalScrollView implements ViewPager.
             View tabView = mTabsContainer.getChildAt(i);
             final boolean isSelect = i == position;
             TextView tab_title = (TextView) tabView.findViewById(R.id.tv_tab_title);
-
             if (tab_title != null) {
                 tab_title.setTextColor(isSelect ? mTextSelectColor : mTextUnselectColor);
+                //TODO 加标签背景图
+                if(mIndicatorSelectDrawable != null && mIndicatorUnSelectDrawable != null){
+                    tabView.setBackground(isSelect ? mIndicatorSelectDrawable : mIndicatorUnSelectDrawable);
+                }
                 if (mTextBold == TEXT_BOLD_WHEN_SELECT) {
                     tab_title.getPaint().setFakeBoldText(isSelect);
                 }

@@ -65,6 +65,8 @@ public class SlidingTabActivity extends AppCompatActivity implements OnTabSelect
         /** indicator圆角色块 */
         SlidingTabLayout tabLayout_10 = ViewFindUtils.find(decorView, R.id.tl_10);
 
+        SlidingTabLayout tabLayout_11 = ViewFindUtils.find(decorView, R.id.tl_11);
+
         tabLayout_1.setViewPager(vp);
         tabLayout_2.setViewPager(vp);
         tabLayout_2.setOnTabSelectListener(this);
@@ -76,6 +78,7 @@ public class SlidingTabActivity extends AppCompatActivity implements OnTabSelect
         tabLayout_8.setViewPager(vp, mTitles, this, mFragments);
         tabLayout_9.setViewPager(vp);
         tabLayout_10.setViewPager(vp);
+        tabLayout_11.setViewPager(vp);
 
         vp.setCurrentItem(4);
 

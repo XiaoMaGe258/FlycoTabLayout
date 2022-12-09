@@ -122,6 +122,19 @@
                 tl:tl_indicator_margin_right="2dp"
                 tl:tl_indicator_style="BLOCK"/>
 
+            <com.flyco.tablayout.SlidingTabLayout
+                android:id="@+id/tl_11"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:background="#ffffff"
+                tl:tl_tab_margin="10dp"
+                tl:tl_tab_width="66dp"
+                tl:tl_textSelectColor="#ffffff"
+                tl:tl_textUnselectColor="#333333"
+                tl:tl_indicator_select_drawable="@drawable/tab_select_bg"
+                tl:tl_indicator_un_select_drawable="@drawable/tab_un_select_bg"
+                tl:tl_indicator_style="NORMAL"/>
+
         </LinearLayout>
 
         <androidx.viewpager.widget.ViewPager

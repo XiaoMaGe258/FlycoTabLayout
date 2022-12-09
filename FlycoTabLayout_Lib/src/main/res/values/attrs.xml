@@ -3,6 +3,11 @@
     <!-- indicator -->
     <!-- 设置显示器颜色 -->
     <attr name="tl_indicator_color" format="color"/>
+    <!-- 设置显示器选择时背景图 -->
+    <attr name="tl_indicator_select_drawable" format="reference" />
+    <!-- 设置显示器未选择时背景图 -->
+    <attr name="tl_indicator_un_select_drawable" format="reference" />
+
     <!-- 设置显示器高度 -->
     <attr name="tl_indicator_height" format="dimension"/>
     <!-- 设置显示器固定宽度 -->
@@ -60,6 +65,8 @@
     <attr name="tl_tab_space_equal" format="boolean"/>
     <!-- 设置tab固定大小 -->
     <attr name="tl_tab_width" format="dimension"/>
+    <!-- 设置tab的间距 -->
+    <attr name="tl_tab_margin" format="dimension"/>
 
     <!-- title -->
     <!-- 设置字体大小 -->
@@ -90,6 +97,8 @@
         <attr name="tl_indicator_gravity"/>
         <attr name="tl_indicator_style"/>
         <attr name="tl_indicator_width_equal_title"/>
+        <attr name="tl_indicator_select_drawable"/>
+        <attr name="tl_indicator_un_select_drawable"/>
 
         <!-- underline -->
         <attr name="tl_underline_color"/>
@@ -105,6 +114,7 @@
         <attr name="tl_tab_padding"/>
         <attr name="tl_tab_space_equal"/>
         <attr name="tl_tab_width"/>
+        <attr name="tl_tab_margin"/>
 
         <!-- title -->
         <attr name="tl_textsize"/>
@@ -130,6 +140,8 @@
         <attr name="tl_indicator_anim_enable"/>
         <attr name="tl_indicator_anim_duration"/>
         <attr name="tl_indicator_bounce_enable"/>
+        <attr name="tl_indicator_select_drawable"/>
+        <attr name="tl_indicator_un_select_drawable"/>
 
         <!-- underline -->
         <attr name="tl_underline_color"/>
@@ -145,6 +157,7 @@
         <attr name="tl_tab_padding"/>
         <attr name="tl_tab_space_equal"/>
         <attr name="tl_tab_width"/>
+        <attr name="tl_tab_margin"/>
 
         <!-- title -->
         <attr name="tl_textsize"/>
