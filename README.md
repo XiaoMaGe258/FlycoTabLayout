@@ -33,7 +33,7 @@ can be used freely with other widgets together.
 
 ## Demo
 
-新增了一种样式； 可以设置选择的tab背景图片；间距等；
+A new style was added; You can set the selected tab background image; Spacing, etc.;
 
 ![](https://github.com/XiaoMaGe258/FlycoTabLayout/blob/master/new_style.png)
 
